@@ -1,21 +1,13 @@
 {
   "name": "CRPE Révisions",
   "short_name": "CRPE",
-  "start_url": "/index.html",
+  "start_url": "/crpe-pwa/index.html",
+  "scope": "/crpe-pwa/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
-  "orientation": "portrait",
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    { "src": "/crpe-pwa/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/crpe-pwa/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
