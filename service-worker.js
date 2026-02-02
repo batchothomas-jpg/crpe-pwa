@@ -1,11 +1,12 @@
 const CACHE_NAME = "crpe-pwa-v2";
 
 const CORE_ASSETS = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./css/style.css"
+  "/crpe-pwa/",
+  "/crpe-pwa/index.html",
+  "/crpe-pwa/manifest.json",
+  "/crpe-pwa/css/style.css"
 ];
+
 
 // INSTALL
 self.addEventListener("install", event => {
@@ -48,3 +49,4 @@ self.addEventListener("fetch", event => {
     )
   );
 });
+
