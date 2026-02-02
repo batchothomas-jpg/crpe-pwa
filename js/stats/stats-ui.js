@@ -20,7 +20,7 @@ export function renderStats(containerId) {
     html += `<p>Aucun quiz complété.</p>`;
   } else {
     Object.entries(quizStats).forEach(([id, attempts]) => {
-      const last = attempts.at(-1);
+      const last = attempts[attempts.length - 1];
       const best = Math.max(...attempts.map(a => a.percent));
       html += `
         <div class="stat-card">
@@ -39,7 +39,7 @@ export function renderStats(containerId) {
     html += `<p>Aucun examen effectué.</p>`;
   } else {
     Object.entries(examStats).forEach(([level, attempts]) => {
-      const last = attempts.at(-1);
+      const last = attempts[attempts.length - 1];
       const best = Math.max(...attempts.map(a => a.note));
       const avg =
         Math.round(
@@ -71,3 +71,4 @@ export function renderStats(containerId) {
     }
   };
 }
+
