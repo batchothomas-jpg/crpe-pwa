@@ -1,8 +1,10 @@
 export const mathsStats = {
   matiere: "Mathématiques",
   chapitre: "Statistiques et probabilités",
-  quizId:"maths-proportionnalite",
-  quizId: "maths-statistique",
+  quizzes: [
+    { id: "maths-proportionnalite", label: "Préhistoire" },
+    { id:"maths-statistique", label: "Statistique" },
+  ],
   sousChapitres: [
 
     /* =======================
@@ -287,6 +289,7 @@ Le jury attend une approche adaptée au niveau des élèves.
 
   ]
 };
+
 
 
 export default mathsStats;
