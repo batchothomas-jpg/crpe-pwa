@@ -20,7 +20,9 @@ export const menuData = [
       { titre: "Conjugaison", route: "fr-conjugaison" },
       { titre: "Vocabulaire", route: "fr-vocabulaire" },
       { titre: "Compréhension de texte", route: "fr-comprehension" },
-      { titre: "Didactique du français", route: "fr-didactique" }
+      { titre: "Didactique du français", route: "fr-didactique" },
+      { titre: "Préparation complète à l’écrit (manuel CRPE 2024-2025)", route: "fr-crpe-ecrit" },
+      { titre: "Admission, oral et sujets français / maths", route: "crpe-admission" }
     ]
   },
   {

@@ -313,3 +313,113 @@ th, td {
   font-weight: bold;
   color: #4caf50;
 }
+/* Préparation français CRPE : fiches, quiz et sujets blancs */
+.manual-intro,
+.manual-lesson,
+.manual-oral,
+.manual-exam,
+.manual-chapter {
+  line-height: 1.65;
+}
+
+.manual-tabs,
+.manual-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+}
+
+.manual-chapter,
+.manual-exam {
+  margin: 0.8rem 0;
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.manual-chapter > summary,
+.manual-exam > summary {
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.manual-oral {
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #6366f1;
+  background: #eef2ff;
+}
+
+.manual-oral p,
+.manual-feedback {
+  margin-bottom: 0;
+}
+
+.manual-question {
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+}
+
+.manual-option {
+  text-align: left;
+}
+
+.manual-option.is-correct {
+  border-color: #15803d;
+  background: #dcfce7;
+}
+
+.manual-feedback {
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  background: #eff6ff;
+}
+
+.manual-text {
+  margin: 0.6rem 0;
+  padding: 1rem;
+  border-left: 4px solid #64748b;
+  background: #f1f5f9;
+}
+
+.manual-correction {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #f8fafc;
+}
+
+.manual-duration,
+.manual-rubric {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.admission-update {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #f59e0b;
+  border-left: 5px solid #d97706;
+  border-radius: 0.6rem;
+  background: #fffbeb;
+  line-height: 1.6;
+}
+
+.admission-update p {
+  margin: 0.5rem 0;
+}
+
+.admission-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.2rem;
+}
+
+.admission-links a {
+  color: #1d4ed8;
+  text-decoration: underline;
+}

@@ -5,6 +5,8 @@ import { quizRegistry } from "./quiz/quiz-registry.js";
 import { renderStats } from "./stats/stats-ui.js";
 import { renderExam } from "./exam/exam-ui.js";
 import { renderCourse } from "./course-renderer.js";
+import { renderFrCrpeManual } from "./courses/francais/crpe-ecrit-ui.js";
+import { renderCrpeAdmission } from "./courses/crpe-admission-ui.js";
 
 
 
@@ -77,6 +79,8 @@ registerRoute("fr-vocabulaire", () => renderCourse("app", frVocabulaire));
 registerRoute("fr-comprehension", () => renderCourse("app", frComprehension));
 registerRoute("fr-didactique", () => renderCourse("app", frDidactique));
 registerRoute("fr-conjugaison-complete", () => renderCourse("app", frConjugaisonComplete));
+registerRoute("fr-crpe-ecrit", () => renderFrCrpeManual("app"));
+registerRoute("crpe-admission", () => renderCrpeAdmission("app"));
 
 /* ROUTES AUTRES */
 registerRoute("sciences-vivant", () => renderCourse("app", sciencesVivant));
