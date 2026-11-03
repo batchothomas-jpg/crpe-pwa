@@ -1,5 +1,6 @@
 import { navigate } from "../router.js";
 import { admissionCards, professionalCases, writtenPractice } from "./crpe-admission-data.js";
+import { rapidPrepCards, hgemcCards, hgemcPractice } from "./crpe-manuals-data.js";
 
 function make(tag, className = "", text) {
   const el = document.createElement(tag);
@@ -32,8 +33,8 @@ function quizQuestion(question, number) {
   return card;
 }
 
-function renderCards(content) {
-  admissionCards.forEach((data, index) => {
+function renderCards(content, cards) {
+  cards.forEach((data, index) => {
     const section = make("details", "manual-chapter");
     if (index === 0) section.open = true;
     section.append(make("summary", "", data.title));
@@ -61,8 +62,8 @@ function renderCases(content) {
   });
 }
 
-function renderWritten(content) {
-  writtenPractice.forEach(exam => {
+function renderWritten(content, exams) {
+  exams.forEach(exam => {
     const section = make("details", "manual-exam");
     section.append(make("summary", "", exam.title));
     section.append(make("p", "manual-duration", exam.duration));
@@ -88,16 +89,18 @@ export function renderCrpeAdmission(containerId) {
   const back = make("button", "", "⬅️ Retour au menu");
   back.type = "button";
   back.addEventListener("click", () => navigate("menu"));
-  root.append(back, make("h1", "", "CRPE — admission et entraînement français / mathématiques"));
+  root.append(back, make("h1", "", "CRPE — cours, méthodes et entraînements"));
 
   const note = make("aside", "admission-update");
   note.append(make("strong", "", "Choisissez le bon format avant de vous entraîner."));
-  note.append(make("p", "", "Ces ressources viennent d’un guide d’admission 2025 et d’un recueil d’écrits de 2022. Le concours externe bac+3, organisé depuis 2026, a un format différent ; le bac+5 est maintenu à titre transitoire pour 2026 et 2027. Les épreuves d’admission évoluent aussi en 2027. Vérifiez les modalités de votre voie et de votre session sur les pages officielles."));
+  note.append(make("p", "", "Les ouvrages intégrés couvrent des sessions 2022 à 2025. Ils servent à travailler les connaissances et les démarches ; leurs formats, programmes et exemples réglementaires ne décrivent pas nécessairement la session actuelle. Pour 2027, les concours bac+3 et bac+5 coexistent et leurs programmes diffèrent. Vérifiez la voie et la session visées sur les pages officielles avant de vous entraîner."));
+  note.append(make("p", "", "Manuels étudiés : CRPE 2024 — Préparation rapide et complète aux épreuves écrites et orales (collectif) ; CRPE Concours de professeur des écoles — Histoire, géographie et EMC, tout-en-un 2024-2025 (André Janson, Nicolas Lebrun et autres auteurs). Les fiches et exercices de cette application sont des synthèses et créations originales."));
   const links = make("div", "admission-links");
   [
     ["Épreuves officielles du CRPE bac+3", "https://www.devenirenseignant.gouv.fr/les-epreuves-du-concours-externe-bac3-de-recrutement-de-professeurs-des-ecoles-1380"],
     ["Épreuves officielles du CRPE bac+5", "https://www.devenirenseignant.gouv.fr/les-epreuves-du-concours-externe-bac-5-de-recrutement-de-professeurs-des-ecoles-1009"],
-    ["Arrêté modificatif pour la session 2027", "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054861950"]
+    ["Programmes officiels des concours et session 2027", "https://www.devenirenseignant.gouv.fr/les-epreuves-des-concours-de-recrutement-de-professeurs-des-ecoles-1100"],
+    ["Calendrier officiel de la session 2027", "https://www.devenirenseignant.gouv.fr/le-calendrier-des-concours-de-recrutement-de-professeurs-des-ecoles-de-la-session-2027-1091"]
   ].forEach(([label, href]) => {
     const a = make("a", "", label);
     a.href = href;
@@ -108,14 +111,17 @@ export function renderCrpeAdmission(containerId) {
   note.append(links);
   root.append(note);
 
-  const counts = `${admissionCards.length} fiches, ${admissionCards.reduce((sum, card) => sum + card.questions.length, 0)} questions, ${professionalCases.length} situations professionnelles et ${writtenPractice.length} mini-sujets originaux.`;
+  const counts = `${admissionCards.length + rapidPrepCards.length + hgemcCards.length} fiches, ${[...admissionCards, ...rapidPrepCards, ...hgemcCards].reduce((sum, card) => sum + card.questions.length, 0)} questions expliquées, ${professionalCases.length} situations professionnelles et ${writtenPractice.length + hgemcPractice.length} sujets blancs originaux.`;
   root.append(make("p", "manual-intro", counts));
 
   const tabs = make("div", "manual-tabs");
   const choices = [
-    ["Fiches + quiz", renderCards],
+    ["Admission : fiches + quiz", content => renderCards(content, admissionCards)],
+    ["Guide CRPE 2024", content => renderCards(content, rapidPrepCards)],
+    ["Histoire, géographie, EMC", content => renderCards(content, hgemcCards)],
     ["Situations professionnelles", renderCases],
-    ["Sujets blancs français / maths", renderWritten]
+    ["Sujets français / maths", content => renderWritten(content, writtenPractice)],
+    ["Sujets originaux HG / EMC", content => renderWritten(content, hgemcPractice)]
   ];
   const content = make("section", "manual-content");
   choices.forEach(([label, render], index) => {
@@ -129,5 +135,5 @@ export function renderCrpeAdmission(containerId) {
     tabs.append(button);
   });
   root.append(tabs, content);
-  renderCards(content);
+  renderCards(content, admissionCards);
 }

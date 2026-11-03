@@ -22,6 +22,8 @@ import { quiz as frVocabulaireQuiz } from "./quizzes/francais-vocabulaire.js";
 import {quiz as frConjugaisonCompleteQuiz } from "./quizzes/francais-conjugaison-complete.js";
 import { quiz as crpeFrancaisManuelQuiz } from "./quizzes/crpe-francais-manuel.js";
 import { quiz as crpeAdmissionQuiz } from "./quizzes/crpe-admission.js";
+import { quiz as crpeGuide2024Quiz } from "./quizzes/crpe-guide-2024.js";
+import { quiz as crpeHgemcManuelQuiz } from "./quizzes/crpe-hgemc-manuel.js";
 
 /*QUIZ GEOGRAPHIE */
 import { quiz as geographiehabiteQuiz } from "./quizzes/geographie-habiter.js";
@@ -75,6 +77,8 @@ export const quizRegistry = {
  "fr-vocabulaire": frVocabulaireQuiz,
  "crpe-francais-manuel": crpeFrancaisManuelQuiz,
  "crpe-admission": crpeAdmissionQuiz,
+ "crpe-guide-2024": crpeGuide2024Quiz,
+ "crpe-hgemc-manuel": crpeHgemcManuelQuiz,
 
  "geographie-habite": geographiehabiteQuiz,
  "geographie-monde": geographiemondeQuiz ,
