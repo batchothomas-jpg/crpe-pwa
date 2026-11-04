@@ -96,6 +96,8 @@ registerRoute("numerique-educatif", () => renderCourse("app", numeriqueEducatif)
 registerRoute("systeme-educatif", () => renderCourse("app", systemeEducatif));
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("nav-exam")?.addEventListener("click", () => navigate("exam"));
+  document.getElementById("nav-stats")?.addEventListener("click", () => navigate("stats"));
   navigate("menu");
 });
 
