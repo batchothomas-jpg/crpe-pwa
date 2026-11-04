@@ -1,5 +1,6 @@
 import { navigate } from "../../router.js";
 import { frCrpeChapters, frCrpeMockExams } from "./crpe-ecrit-manuel.js";
+import { francais50Fiches } from "./francais-50-fiches.js";
 
 function node(tag, className, text) {
   const item = document.createElement(tag);
@@ -36,8 +37,8 @@ function renderQuestion(question, number) {
   return card;
 }
 
-function renderLessons(container) {
-  frCrpeChapters.forEach((chapter, index) => {
+function renderLessons(container, chapters = frCrpeChapters) {
+  chapters.forEach((chapter, index) => {
     const section = node("details", "manual-chapter");
     if (index === 0) section.open = true;
     section.append(node("summary", "", chapter.title));
@@ -85,13 +86,15 @@ export function renderFrCrpeManual(containerId) {
   back.addEventListener("click", () => navigate("menu"));
   container.append(back);
   container.append(node("h1", "", "Français — préparation à l’écrit du CRPE"));
-  container.append(node("p", "manual-intro", `${frCrpeChapters.length} fiches synthétiques, ${frCrpeChapters.reduce((sum, chapter) => sum + chapter.questions.length, 0)} questions avec explications, des pistes pour l’oral et ${frCrpeMockExams.length} sujets blancs originaux avec corrigés indicatifs. Contenus rédigés pour l’application à partir des thèmes du manuel ; ils ne remplacent pas le texte intégral ni la vérification des attendus officiels.`));
+  const totalQuestions = [...frCrpeChapters, ...francais50Fiches].reduce((sum, chapter) => sum + chapter.questions.length, 0);
+  container.append(node("p", "manual-intro", `${frCrpeChapters.length + francais50Fiches.length} fiches synthétiques, ${totalQuestions} questions expliquées, des pistes pour l’oral et ${frCrpeMockExams.length} sujets blancs originaux avec corrigés indicatifs. Les compléments du recueil « 50 fiches » approfondissent les notions déjà au programme de révision avec des quiz supplémentaires.`));
 
   const tabs = node("div", "manual-tabs");
   const lessonsButton = node("button", "", "Fiches et quiz");
+  const refreshButton = node("button", "", "Approfondissements — 50 fiches");
   const examsButton = node("button", "", "Épreuves blanches");
-  lessonsButton.type = examsButton.type = "button";
-  tabs.append(lessonsButton, examsButton);
+  lessonsButton.type = refreshButton.type = examsButton.type = "button";
+  tabs.append(lessonsButton, refreshButton, examsButton);
   container.append(tabs);
 
   const content = node("section", "manual-content");
@@ -101,6 +104,11 @@ export function renderFrCrpeManual(containerId) {
   lessonsButton.addEventListener("click", () => {
     content.replaceChildren();
     renderLessons(content);
+  });
+  refreshButton.addEventListener("click", () => {
+    content.replaceChildren();
+    renderLessons(content, francais50Fiches);
+    content.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   examsButton.addEventListener("click", () => {
     content.replaceChildren();

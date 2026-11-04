@@ -21,6 +21,7 @@ import { quiz as frOrthographeQuiz } from "./quizzes/francais-orthographe.js";
 import { quiz as frVocabulaireQuiz } from "./quizzes/francais-vocabulaire.js";
 import {quiz as frConjugaisonCompleteQuiz } from "./quizzes/francais-conjugaison-complete.js";
 import { quiz as crpeFrancaisManuelQuiz } from "./quizzes/crpe-francais-manuel.js";
+import { quiz as francais50FichesQuiz } from "./quizzes/francais-50-fiches.js";
 import { quiz as crpeAdmissionQuiz } from "./quizzes/crpe-admission.js";
 import { quiz as crpeGuide2024Quiz } from "./quizzes/crpe-guide-2024.js";
 import { quiz as crpeToutLeCours2023Quiz } from "./quizzes/crpe-tout-le-cours-2023.js";
@@ -77,6 +78,7 @@ export const quizRegistry = {
  "fr-othographe": frOrthographeQuiz,
  "fr-vocabulaire": frVocabulaireQuiz,
  "crpe-francais-manuel": crpeFrancaisManuelQuiz,
+ "francais-50-fiches": francais50FichesQuiz,
  "crpe-admission": crpeAdmissionQuiz,
  "crpe-guide-2024": crpeGuide2024Quiz,
  "crpe-tout-le-cours-2023": crpeToutLeCours2023Quiz,
