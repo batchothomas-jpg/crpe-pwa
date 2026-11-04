@@ -23,6 +23,7 @@ import {quiz as frConjugaisonCompleteQuiz } from "./quizzes/francais-conjugaison
 import { quiz as crpeFrancaisManuelQuiz } from "./quizzes/crpe-francais-manuel.js";
 import { quiz as crpeAdmissionQuiz } from "./quizzes/crpe-admission.js";
 import { quiz as crpeGuide2024Quiz } from "./quizzes/crpe-guide-2024.js";
+import { quiz as crpeToutLeCours2023Quiz } from "./quizzes/crpe-tout-le-cours-2023.js";
 import { quiz as crpeHgemcManuelQuiz } from "./quizzes/crpe-hgemc-manuel.js";
 
 /*QUIZ GEOGRAPHIE */
@@ -78,6 +79,7 @@ export const quizRegistry = {
  "crpe-francais-manuel": crpeFrancaisManuelQuiz,
  "crpe-admission": crpeAdmissionQuiz,
  "crpe-guide-2024": crpeGuide2024Quiz,
+ "crpe-tout-le-cours-2023": crpeToutLeCours2023Quiz,
  "crpe-hgemc-manuel": crpeHgemcManuelQuiz,
 
  "geographie-habite": geographiehabiteQuiz,
