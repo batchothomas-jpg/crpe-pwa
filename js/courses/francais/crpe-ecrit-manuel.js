@@ -33,7 +33,7 @@ export const frCrpeChapters = [
   },
   {
     title: "2. La phrase et ses constituants",
-    lesson: "Une phrase verbale s’organise autour d’un ou plusieurs verbes conjugués ; une phrase non verbale s’organise autrement (« Quel beau jardin ! »). On distingue quatre types : déclaratif, interrogatif, impératif et exclamatif. Les formes (négative, passive, emphatique, impersonnelle) sont une autre dimension. Une phrase simple comporte une proposition ; une phrase complexe en comporte plusieurs. Les constituants s’identifient par leur construction et leur sens, pas seulement par leur longueur.",
+    lesson: "Une phrase verbale s’organise autour d’un ou plusieurs verbes conjugués ; une phrase non verbale s’organise autrement (« Quel beau jardin ! »). Les ressources peuvent classer l’exclamation comme type ; la terminologie de référence récente la traite comme une forme, avec les types déclaratif, interrogatif et injonctif. Les formes négative, passive, emphatique et impersonnelle sont une autre dimension. Dans une analyse, suivre le cadre de la consigne et distinguer ces critères. Une phrase simple comporte une proposition ; une phrase complexe en comporte plusieurs.",
     oral: "Proposez une activité de manipulation pour faire distinguer le type et la forme d’une phrase.",
     questions: [
       {q:"« N’ouvrez pas les fenêtres. » Quel est son type ?", a:["Déclaratif","Interrogatif","Impératif","Exclamatif"], c:2, e:"La phrase donne un ordre à la forme négative : son type est impératif."},
@@ -149,6 +149,17 @@ export const frCrpeChapters = [
       {q:"« Rose », « tulipe » et « iris » sont des hyponymes de…", a:["Fleur","Jardinier","Pétale","Printemps"], c:0, e:"« Fleur » est le terme générique qui englobe ces catégories particulières."},
       {q:"Dans « Il a perdu la clé du coffre » puis « la clé du problème », le mot clé illustre…", a:["L’antonymie","La polysémie","La dérivation","La conjugaison"], c:1, e:"Le même mot possède plusieurs sens liés, sélectionnés par le contexte."},
       {q:"Un champ lexical de la mer rassemble…", a:["Uniquement des synonymes","Des mots associés au domaine maritime","Des mots de même classe grammaticale","Des mots de même origine obligatoirement"], c:1, e:"Les mots peuvent être de classes et de sens différents tout en relevant du même domaine."}
+    ]
+  },
+  {
+    title: "Figures de style — repérer un procédé et interpréter son effet",
+    lesson: "Une figure de style transforme l’expression pour produire un effet de sens ou de rythme. Une comparaison rapproche deux éléments avec un outil comparatif ; une métaphore établit un rapprochement sans cet outil ; une personnification attribue des traits humains à un non-humain. L’hyperbole amplifie, l’antithèse oppose, la répétition insiste et la litote suggère davantage en disant moins. Pour l’analyser, citer un indice précis, nommer le procédé avec prudence puis expliquer son effet dans ce passage : une figure ne porte pas une interprétation fixe hors contexte.",
+    oral: "Comment aideriez-vous des élèves à passer du repérage d’une image à l’explication de ce qu’elle fait comprendre au lecteur ?",
+    questions: [
+      {q:"Dans « La ville s’éveillait sous le soleil », le procédé est surtout…", a:["Une personnification", "Une comparaison", "Une litote", "Une énumération"], c:0, e:"La ville reçoit une action associée à un être vivant ; l’effet dépend du contexte descriptif."},
+      {q:"Dans « Ses paroles étaient des flèches », on trouve…", a:["Une métaphore", "Une comparaison avec outil", "Une hyperbole numérique", "Une antithèse"], c:0, e:"Le rapprochement entre paroles et flèches est direct, sans « comme » ou autre outil comparatif."},
+      {q:"Dans « Je ne te déteste pas » pour suggérer un sentiment positif, on peut analyser…", a:["Une litote, si le contexte confirme l’atténuation", "Une personnification nécessairement", "Une comparaison", "Une onomatopée"], c:0, e:"La formulation atténuée peut laisser entendre davantage que ce qui est littéralement dit."},
+      {q:"Une analyse pertinente d’une figure de style doit…", a:["Relier un indice précis à un effet interprété dans le passage", "Nommer une figure sans preuve", "Attribuer toujours le même effet à chaque figure", "Résumer seulement le paragraphe"], c:0, e:"Le procédé et son effet doivent être justifiés à partir de la formulation et du contexte."}
     ]
   },
   {

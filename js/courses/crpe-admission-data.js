@@ -3,7 +3,7 @@
 export const admissionCards = [
   {
     title: "1. Comprendre les voies et les épreuves",
-    lesson: "Les manuels réunissent des repères de plusieurs sessions : le guide d’admission porte sur 2025 et le recueil d’écrits sur un format antérieur. Le concours externe bac+3 organisé depuis 2026 a une structure distincte. Les concours bac+5 sont maintenus à titre transitoire pour 2026 et 2027. Avant de s’entraîner sur un format, relever la voie, la session, les durées, les coefficients et les épreuves à partir de la page officielle de cette session.",
+    lesson: "Les manuels réunissent des repères de plusieurs sessions : malgré le nom du fichier fourni, la couverture intérieure du guide d’admission indique le concours 2024 ; le recueil des 22 sujets est consacré au CRPE 2022 et à un ancien format. Le concours externe bac+3 organisé depuis 2026 a une structure distincte. Les concours bac+5 sont maintenus à titre transitoire pour 2026 et 2027. Avant de s’entraîner sur un format, relever la voie, la session, les durées, les coefficients et les épreuves à partir de la page officielle de cette session.",
     prompt: "Expliquez au jury comment vous vérifieriez qu’un sujet d’entraînement correspond bien à votre voie de concours et à la session visée.",
     questions: [
       {q:"Pourquoi faut-il identifier la session et la voie avant d’utiliser une annale ?", a:["Les formats et épreuves peuvent différer","Les notions scolaires ne changent jamais","Les corrigés ne servent qu’une fois","Les annales ne comportent aucun programme"], c:0, e:"Les modalités dépendent de la voie et de la session ; une annale ancienne reste utile pour travailler des notions, mais pas forcément le format."},
@@ -83,12 +83,16 @@ export const admissionCards = [
   },
   {
     title: "9. Développement de l’enfant et apprentissages",
-    lesson: "Le développement moteur, cognitif, langagier, affectif et social évolue et varie selon les individus. Les repères théoriques (comportementalisme, constructivisme, socioconstructivisme, entre autres) éclairent des mécanismes différents : entraînement et retour, construction par l’action, ou apprentissage soutenu par les interactions. Les mobiliser avec prudence : observer les besoins et les tâches réelles plutôt que réduire un élève à une théorie ou à un âge moyen.",
+    lesson: "Le développement moteur, cognitif, langagier, affectif et social évolue et varie selon les individus. Les théories proposent des angles différents : le béhaviorisme (Pavlov, Skinner) étudie l’apprentissage par associations, conséquences et retours ; Piaget décrit la construction active des connaissances, notamment par assimilation et accommodation ; Vygotski met en avant la médiation sociale et la zone proximale de développement ; Bruner éclaire l’étayage ; Wallon articule dimensions motrice, affective et sociale ; Bowlby et Ainsworth ont étudié l’attachement ; Bandura l’apprentissage par observation et le sentiment d’efficacité personnelle. Ces repères sont des cadres historiques de réflexion, pas des diagnostics ni des étiquettes d’élèves : observer les besoins et les tâches réelles.",
     prompt: "Comment tenez-vous compte de l’hétérogénéité du développement sans enfermer un élève dans une étiquette ?",
     questions: [
       {q:"Un repère de développement doit être utilisé…", a:["Comme une moyenne qui détermine tout","Avec prudence, en tenant compte de l’élève et de la situation","Pour diagnostiquer seul un trouble","Pour fixer les mêmes attentes sans observation"], c:1, e:"Les trajectoires sont diverses ; les repères orientent l’observation mais ne remplacent pas celle-ci."},
       {q:"Une approche socioconstructiviste met notamment l’accent sur…", a:["Les interactions et la médiation","La mémorisation seule","L’absence d’enseignant","Les notes comme moteur unique"], c:0, e:"Les échanges et l’étayage social participent à la construction des apprentissages."},
-      {q:"Un retour efficace après un essai doit…", a:["Rendre visibles les critères et aider à ajuster la stratégie","Se limiter à « faux »","Comparer publiquement les élèves","Arriver seulement en fin d’année"], c:0, e:"Un retour précis aide l’élève à comprendre l’écart et la prochaine étape."}
+      {q:"Un retour efficace après un essai doit…", a:["Rendre visibles les critères et aider à ajuster la stratégie","Se limiter à « faux »","Comparer publiquement les élèves","Arriver seulement en fin d’année"], c:0, e:"Un retour précis aide l’élève à comprendre l’écart et la prochaine étape."},
+      {q:"La zone proximale de développement chez Vygotski désigne…", a:["L’écart entre ce que l’élève fait seul et ce qu’il peut réussir avec une aide adaptée","Un âge fixe où tous les enfants apprennent la même chose","Une évaluation de personnalité","Un stade moteur universel"], c:0, e:"La notion met en relation les capacités actuelles, l’aide apportée et les apprentissages possibles."},
+      {q:"Chez Piaget, l’assimilation et l’accommodation renvoient…", a:["À des processus de construction et de réorganisation des connaissances","À deux sanctions scolaires","À des types de mémoire uniquement","À des groupes d’âge fixes"], c:0, e:"Ces processus décrivent l’intégration d’une expérience aux schèmes existants et leur transformation."},
+      {q:"L’étayage associé aux travaux de Bruner consiste à…", a:["Ajuster temporairement l’aide pour soutenir une tâche puis favoriser l’autonomie","Faire la tâche à la place de l’élève","Évaluer seulement le résultat final","Supprimer toute interaction"], c:0, e:"L’aide est adaptée à l’obstacle et peut s’effacer à mesure que l’élève progresse."},
+      {q:"Les théories du développement sont utiles à l’enseignant surtout pour…", a:["Éclairer l’observation et choisir une aide, sans enfermer l’élève dans un modèle","Prédire exactement la réussite de chaque enfant","Remplacer les programmes et les évaluations","Attribuer une étiquette stable à chaque élève"], c:0, e:"Un cadre théorique soutient le raisonnement professionnel, mais ne remplace pas l’observation du contexte."}
     ]
   },
   {
@@ -266,6 +270,24 @@ export const writtenPractice = [
     rubric: "Barème indicatif /20 : étude de la langue 8, lexique 3, réflexion 9. Valoriser les justifications précises et la qualité de la rédaction."
   },
   {
+    title: "Mini-sujet français B — syntaxe, lexique et argumentation",
+    duration: "Entraînement original — 45 minutes",
+    text: "À l’école, le jardin n’est pas seulement un lieu où l’on observe des plantes. Les élèves y formulent des questions, confrontent leurs idées et apprennent à décrire avec précision les plantes qu’ils observent. Une observation attentive ne donne pas toujours immédiatement une explication : il faut parfois comparer, mesurer ou recommencer. Le carnet de terrain garde la trace de ces essais et permet à la classe de discuter les conclusions.",
+    tasks: [
+      "1. Dans « Les élèves y formulent des questions », donner la nature et la fonction de « y », puis préciser son référent.",
+      "2. Dans « les plantes qu’ils observent », délimiter la proposition subordonnée relative et indiquer la fonction du pronom relatif.",
+      "3. Expliquer la formation et le sens de l’adverbe « attentivement » dans le texte.",
+      "4. En 8 à 10 lignes, expliquer en quoi la confrontation d’observations peut aider une classe à construire un savoir. Appuyer la réponse sur deux idées du texte et organiser le raisonnement."
+    ],
+    correction: [
+      "« Y » est un pronom adverbial, complément de lieu du verbe « formulent » ; il reprend « au jardin », évoqué dans la phrase précédente.",
+      "La subordonnée relative est « qu’ils observent ». Introduite par le pronom relatif « que », elle complète l’antécédent « plantes » ; « que » est COD du verbe « observent ».",
+      "« Attentivement » est un adverbe formé sur la forme féminine « attentive », à laquelle s’ajoute le suffixe -ment. Il signifie ici que l’observation est menée avec soin et concentration.",
+      "Pistes de réponse : formuler une question rend le problème explicite ; confronter les descriptions aide à distinguer observation et interprétation ; comparer, mesurer et recommencer permet de mettre les hypothèses à l’épreuve ; le carnet conserve des traces discutables par tous. Une réponse aboutie relie deux de ces idées et conclut sur la construction collective d’une explication."
+    ],
+    rubric: "Barème indicatif /20 : analyse syntaxique justifiée (7), lexique et formation du mot (3), compréhension des idées (4), argumentation organisée et langue (6)."
+  },
+  {
     title: "Mini-sujet mathématiques A — proportionnalité et géométrie",
     duration: "Entraînement original — 45 minutes",
     text: "Une école prépare une maquette d’un jardin rectangulaire de 24 m sur 15 m à l’échelle 1/200. Pour planter le pourtour, l’équipe prévoit un plant tous les 2 m, sans compter les quatre coins deux fois.",
@@ -336,5 +358,43 @@ export const writtenPractice = [
       "Répéter 4 fois : avancer de 50 cm, tourner de 90°. Si le robot utilise une autre unité, convertir la longueur et garder une unité cohérente."
     ],
     rubric: "Barème indicatif /10 : aire totale (2), prise en compte des deux bandes sur chaque dimension (3), aire par différence (2), boucle et angle corrects (3)."
+  },
+  {
+    title: "Mini-sujet mathématiques E — division, fractions et volumes",
+    duration: "Entraînement original — 45 minutes",
+    text: "Une école répartit 287 cahiers dans des lots identiques de 24 cahiers. Pour une activité, une boîte rectangulaire mesure 30 cm × 20 cm × 15 cm. Un réservoir est rempli aux trois quarts de sa capacité de 120 litres.",
+    tasks: [
+      "1. Effectuer la division euclidienne de 287 par 24 et interpréter le quotient et le reste.",
+      "2. Calculer le volume de la boîte en cm³ puis en litres.",
+      "3. Calculer la quantité d’eau dans le réservoir rempli aux trois quarts.",
+      "4. Une quantité de 18 litres est partagée également entre 12 groupes. Quelle quantité reçoit chaque groupe en millilitres ?"
+    ],
+    correction: [
+      "287 = 24 × 11 + 23 : on peut former 11 lots complets et il reste 23 cahiers.",
+      "V = 30 × 20 × 15 = 9 000 cm³. Comme 1 L = 1 000 cm³, cela fait 9 L.",
+      "120 × 3/4 = 90 L.",
+      "18 ÷ 12 = 1,5 L par groupe, soit 1 500 mL."
+    ],
+    rubric: "Barème indicatif /10 : division interprétée (2), calcul et conversion du volume (3), fraction de quantité (2), partage et conversion (2), unités et rédaction (1)."
+  },
+  {
+    title: "Mini-sujet mathématiques F — vitesses, données et dénombrement",
+    duration: "Entraînement original — 45 minutes",
+    text: "Lors d’une sortie, un groupe parcourt 6 km en 1 h 30 min à allure régulière. Pour financer le projet, les élèves vendent 18 objets à 4 € chacun et reçoivent une aide fixe de 35 €. Pour un jeu, ils choisissent un code composé d’une lettre parmi A, B, C, D suivie d’un chiffre de 0 à 9.",
+    tasks: [
+      "1. Calculer la durée du trajet en heures puis la vitesse moyenne en km/h.",
+      "2. Quelle distance serait parcourue à la même vitesse en 2 h 15 min ?",
+      "3. Calculer la recette totale. Expliquer pourquoi le montant dépend du nombre d’objets vendus de manière affine.",
+      "4. Dans un tableur, les distances en kilomètres sont en colonne A et les durées en heures en colonne B. Quelle formule saisir en C2 pour calculer la vitesse moyenne du premier trajet, puis recopier vers le bas ?",
+      "5. Combien de codes différents peut-on former ? Le code comporte toujours une lettre puis un chiffre."
+    ],
+    correction: [
+      "1 h 30 min = 1,5 h ; vitesse moyenne = 6 ÷ 1,5 = 4 km/h.",
+      "2 h 15 min = 2,25 h ; distance = 4 × 2,25 = 9 km.",
+      "18 × 4 + 35 = 107 €. Pour n objets, la recette est R(n) = 4n + 35 : le prix unitaire produit une part proportionnelle, à laquelle s’ajoute l’aide fixe.",
+      "En C2, saisir =A2/B2 ; la recopie adapte les références de ligne et calcule les vitesses en km/h. Contrôler qu’une durée a bien été convertie en heures décimales.",
+      "Il y a 4 choix de lettres et 10 choix de chiffres. Le principe multiplicatif donne 4 × 10 = 40 codes."
+    ],
+    rubric: "Barème indicatif /12 : conversions et vitesse (3), distance (2), calcul et modélisation affine (3), formule et unités au tableur (2), dénombrement justifié (2)."
   }
 ];
