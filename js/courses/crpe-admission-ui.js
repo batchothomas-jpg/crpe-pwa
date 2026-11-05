@@ -1,6 +1,7 @@
 import { navigate } from "../router.js";
 import { admissionCards, professionalCases, writtenPractice } from "./crpe-admission-data.js";
 import { rapidPrepCards, fullCourseCards, epsPractice, hgemcCards, hgemcPractice } from "./crpe-manuals-data.js";
+import { projectSynthesisCards } from "./crpe-project-synthesis.js";
 
 function make(tag, className = "", text) {
   const el = document.createElement(tag);
@@ -15,16 +16,20 @@ function quizQuestion(question, number) {
   const options = make("div", "manual-options");
   const feedback = make("p", "manual-feedback");
   feedback.hidden = true;
-  question.a.forEach((answer, index) => {
+  const shift = (number - 1) % question.a.length;
+  const answers = question.a.map((answer, index) => ({ answer, correct: index === question.c }));
+  const orderedAnswers = answers.slice(shift).concat(answers.slice(0, shift));
+  const correctIndex = orderedAnswers.findIndex(answer => answer.correct);
+  orderedAnswers.forEach(({ answer }, index) => {
     const button = make("button", "manual-option", `${String.fromCharCode(65 + index)}. ${answer}`);
     button.type = "button";
     button.dataset.choice = String(index);
     button.addEventListener("click", () => {
       options.querySelectorAll("button").forEach(option => {
         option.disabled = true;
-        option.classList.toggle("is-correct", Number(option.dataset.choice) === question.c);
+        option.classList.toggle("is-correct", Number(option.dataset.choice) === correctIndex);
       });
-      feedback.textContent = `${index === question.c ? "Bonne réponse." : `Réponse attendue : ${String.fromCharCode(65 + question.c)}.`} ${question.e}`;
+      feedback.textContent = `${index === correctIndex ? "Bonne réponse." : `Réponse attendue : ${String.fromCharCode(65 + correctIndex)}.`} ${question.e}`;
       feedback.hidden = false;
     }, { once: true });
     options.append(button);
@@ -95,11 +100,14 @@ export function renderCrpeAdmission(containerId) {
   note.append(make("strong", "", "Choisissez le bon format avant de vous entraîner."));
   note.append(make("p", "", "Les ouvrages intégrés couvrent des sessions 2022 à 2025. Ils servent à travailler les connaissances et les démarches ; leurs formats, programmes et exemples réglementaires ne décrivent pas nécessairement la session actuelle. Plusieurs programmes ont changé depuis la publication des manuels : en 2027, les concours bac+3 et bac+5 coexistent, et les règles peuvent aussi varier selon la classe. Vérifiez la voie, la session et le niveau préparés sur les pages officielles."));
   note.append(make("p", "", "Manuels étudiés : CRPE 2024 — Préparation rapide et complète ; CRPE 2023-2024 — Tout le cours, écrit et oral ; CRPE Admission — l’édition fournie porte « Concours 2024 » sur sa couverture intérieure malgré le nom de fichier 2025 ; Français CRPE 2024-2025 — Épreuve écrite d’admissibilité et 50 fiches de remise à niveau ; Français et mathématiques — 22 sujets corrigés, édition CRPE 2022 ; Histoire, géographie et EMC — Tout-en-un 2024-2025. Les fiches, quiz et sujets affichés sont des synthèses et créations originales."));
+  note.append(make("p", "", "Les archives de projets publics fournies ont aussi été examinées. Elles ne contiennent pas de licence de réutilisation : leurs textes, banques de questions, vidéos, fiches PDF, code et visuels ne sont donc pas copiés dans l’application. Les compléments ci-dessous sont rédigés indépendamment à partir des programmes et référentiels officiels."));
   const links = make("div", "admission-links");
   [
     ["Épreuves officielles du CRPE bac+3", "https://www.devenirenseignant.gouv.fr/les-epreuves-du-concours-externe-bac3-de-recrutement-de-professeurs-des-ecoles-1380"],
     ["Épreuves officielles du CRPE bac+5", "https://www.devenirenseignant.gouv.fr/les-epreuves-du-concours-externe-bac-5-de-recrutement-de-professeurs-des-ecoles-1009"],
     ["Programmes officiels des concours et session 2027", "https://www.devenirenseignant.gouv.fr/les-epreuves-des-concours-de-recrutement-de-professeurs-des-ecoles-1100"],
+    ["Programme du CRPE externe bac+3 : arts et langues vivantes", "https://www.devenirenseignant.gouv.fr/le-programme-des-epreuves-des-concours-externes-bac3-de-recrutement-de-professeurs-des-ecoles-1382"],
+    ["Référentiel officiel des compétences du professorat", "https://www.education.gouv.fr/bo/13/Hebdo30/MENE1315928A.htm"],
     ["Programmes scolaires en vigueur au cycle 3", "https://eduscol.education.fr/4356/enseigner-au-cycle-3"],
     ["Programme EPS et histoire-géographie, cycles 2 et 3", "https://www.education.gouv.fr/bo/2026/Hebdo22/MENE2608631A"],
     ["Organisation officielle des sorties scolaires", "https://www.education.gouv.fr/bo/2024/Hebdo30/MENE2407159C"],
@@ -114,13 +122,14 @@ export function renderCrpeAdmission(containerId) {
   note.append(links);
   root.append(note);
 
-  const allCards = [...admissionCards, ...rapidPrepCards, ...fullCourseCards, ...hgemcCards];
+  const allCards = [...admissionCards, ...projectSynthesisCards, ...rapidPrepCards, ...fullCourseCards, ...hgemcCards];
   const counts = `${allCards.length} fiches, ${allCards.reduce((sum, card) => sum + card.questions.length, 0)} questions expliquées, ${professionalCases.length} situations professionnelles, ${epsPractice.length} entraînements oraux EPS et ${writtenPractice.length + hgemcPractice.length} sujets blancs originaux.`;
   root.append(make("p", "manual-intro", counts));
 
   const tabs = make("div", "manual-tabs");
   const choices = [
     ["Admission : fiches + quiz", content => renderCards(content, admissionCards)],
+    ["Arts, langues et oraux", content => renderCards(content, projectSynthesisCards)],
     ["Guide CRPE 2024", content => renderCards(content, rapidPrepCards)],
     ["Tout le cours 2023-2024", content => renderCards(content, fullCourseCards)],
     ["Histoire, géographie, EMC", content => renderCards(content, hgemcCards)],

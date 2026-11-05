@@ -7,12 +7,13 @@ Application web progressive de révision, déployée sur GitHub Pages.
 - Fiches et quiz de mathématiques, français et autres domaines du CRPE.
 - Préparation à l’écrit de français organisée selon les chapitres d’un manuel 2024-2025, complétée par des approfondissements de grammaire, orthographe et lexique issus du recueil « 50 fiches » : quiz expliqués, pistes pour l’oral et sujets blancs originaux.
 - Préparation à l’admission : didactique (dont contrat didactique, milieu et dévolution), conception de séances, évaluation, différenciation, développement de l’enfant, climat scolaire, EPS, motivation et situations professionnelles.
+- Compléments originaux : arts (thèmes officiels 2027), langue vivante B1, référentiel professionnel, oral de leçon et oral EPS-entretien.
 - Parcours « Tout le cours 2023-2024 » : synthèses de didactique, psychologie de l’enfant, système éducatif, leçons de français et mathématiques, EPS et entretien, avec quiz expliqués et mises en pratique originales.
 - Synthèses originales fondées sur un guide CRPE 2024 (français, mathématiques, EPS, entretien et leçon) et un manuel histoire-géographie-EMC 2024-2025 : repères, démarches disciplinaires, didactique, quiz expliqués et deux sujets originaux.
 - Entraînements originaux en français et mathématiques, avec corrigés indicatifs.
 - Les banques de questions enrichissent aussi les examens aléatoires.
 
-Les fiches, questions et sujets ajoutés sont rédigés pour cette application ; ils ne reproduisent pas les exercices ni les corrigés des ouvrages sources.
+Les fiches, questions et sujets ajoutés sont rédigés pour cette application ; ils ne reproduisent pas les exercices ni les corrigés des ouvrages ou projets sources. Les trois archives de projets publics fournies ne contenaient pas de licence de réutilisation : leurs textes, banques de questions, vidéos, PDF, code et visuels ne sont pas copiés. Les nouveaux compléments s’appuient sur les référentiels et programmes officiels cités dans l’application.
 
 ## Attention aux sessions et aux voies
 
